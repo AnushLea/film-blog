@@ -1,0 +1,24 @@
+.fake-img {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.image-one, .image-two {
+  width: 300px;
+}
+.image-two {
+  position: absolute;
+  display: none;
+  transition: opacity 0.3s;
+  height: 450px;
+  object-fit: cover;
+}
+.fake-img:hover .image-two {
+  display: block;
+  opacity: 1;
+}
+
+.fake-img:hover .image-one {
+  opacity: 0;
+}
+

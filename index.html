@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles4.css">
+    
+  
+    <title>Not A Fan (4)</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <div class="page-title">
+        <img src="images/text.gif">
+      </div>
+      <p class="title">
+        A movie review blog
+      </p>
+      <div>
+        <a class="link-to-pages" href="index.html" >
+          <button> &#9734; Home &#9734;</button>
+        </a>
+        <a class="link-to-pages" href="service-page.html">
+          <button>&#9734; Reviews &#9734;</button>
+        </a>
+        <a class="link-to-pages" href="contact-page.html">
+          <button>&#9734; Requests &#9734;</button>
+        </a>
+      </div>
+      <hr>
+    </header>
+    
+    <main>
+      <div id="slideshow-container">
+
+        <div class="slide">
+          <img src="images/cover-main-page.jpg" alt="Slide 1" style="width:100%; height: 500px;  object-fit: cover;">
+          <div class="text">
+            The Apartment &#40;1960&#41;
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="images/secondImg.jpg" alt="Slide 2" style="width:100%; height: 500px;  object-fit: cover;">
+          <div class="text">
+            Iconic scene where Bud discovers that Fran has been having an affair with his boss
+          </div> 
+        </div>
+
+        <div class="slide">
+          <img src="images/apartment.png" alt="Slide 2" style="width:100%; height: 500px;  object-fit: cover;">
+          <div class="text">
+            Scene featuring Jack Lemmon and Shirley MacLaine
+          </div>
+        </div>
+
+        <button id="prev-btn">Previous</button>
+        <button id="next-btn">Next</button>
+      
+      </div>
+
+      <h1 class="team"> &#9734; Our Team  &#9734;</h1>
+
+      <div class="profile">
+        <img class="img-placeholder" src="images/profile.jpg">
+        <dl>
+          <dt>Editor In Chief</dt>
+          <dd>Anush Lea</dd>
+          <dt>Favorite Genres</dt>
+          <dd>Drama, Thriller, War, Period Pieces.</dd>
+          <dt>Favorite Films</dt>
+          <dd>The Apartment (1960), Memories of a Murder (2003), Some Like it Hot (1959), Au Revoir Les Enfant (1987). </dd>
+        </dl>
+      </div>
+
+      <div class="profile">
+        <img class="img-placeholder" src="images/profile2.jpg">
+        <dl>
+          <dt>Writer</dt>
+          <dd>Humphrey Bogart</dd>
+          <dt>Favorite Genres</dt>
+          <dd>Drama, War, Romance.</dd>
+          <dt>Favorite Films</dt>
+          <dd>Casablanca (1942), Sabrina (1954), The Big Sleep (1946), To Have and Have Not (1944), The Maltese Falcon. </dd>
+        </dl>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footerContainer">
+        <div class="socialIcons">
+          <a href="https://www.facebook.com/" target="_blank">
+            <i class="fa-brands fa-facebook" target="_blank"></i></a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fa-brands fa-instagram"></i></a>
+          <a href="https://twitter.com/?lang=en" target="_blank">
+            <i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.youtube.com/" target="_blank">
+            <i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footerNavigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="service-page.html">Reviews</a></li>
+            <li><a href="contact-page.html">Requests</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+      $(document).ready(function() {
+          var currentSlide = 0;
+          var slides = $('.slide');
+  
+          function showSlide(index) {
+              slides.hide();
+              slides.eq(index).fadeIn();
+          }
+  
+          function nextSlide() {
+              currentSlide = (currentSlide + 1) % slides.length;
+              showSlide(currentSlide);
+          }
+          showSlide(currentSlide);
+  
+          $(document).ready(function() {
+       
+        $('#prev-btn').click(function() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        $('#next-btn').click(function() {
+            nextSlide();
+        });
+    });
+      });
+      
+  </script>
+  </body>
+</html>
